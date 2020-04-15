@@ -32,6 +32,7 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `image` varchar(255) NOT NULL DEFAULT 'default.jpg',
   `description` text NOT NULL
+  `expired_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

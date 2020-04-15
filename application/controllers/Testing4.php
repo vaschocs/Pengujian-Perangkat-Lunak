@@ -27,6 +27,18 @@ class Testing4 extends CI_Controller
         $true = true;
         $expected = true;
         $test_name = 'uji coba assert';
+      
+        $test_name = 'Pengujian if else 4';
+        $result = $this->loop1(4);
+        $expected = 4;
+        $this->unit->run($result,$expected,$test_name);
+
+        
+        
+      
+        
+
+
 
         //test url
         //$output = $this->request('GET',['Login','test']);

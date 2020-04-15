@@ -34,6 +34,7 @@
 										<th>Photo</th>
 										<th>Description</th>
 										<th>Action</th>
+										<th>Expired Date</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -49,13 +50,18 @@
 											<img src="<?php echo base_url('upload/product/'.$product->image) ?>" width="64" />
 										</td>
 										<td class="small">
-											<?php echo substr($product->description, 0, 120) ?>...</td>
+											<?php echo substr($product->description, 0, 120) ?>...
+										</td>
+										<td>
+											<?php echo $product->expired_date ?>
+										</td>
 										<td width="250">
 											<a href="<?php echo site_url('admin/products/edit/'.$product->product_id) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
 											<a onclick="deleteConfirm('<?php echo site_url('admin/products/delete/'.$product->product_id) ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>
+
 									</tr>
 									<?php endforeach; ?>
 

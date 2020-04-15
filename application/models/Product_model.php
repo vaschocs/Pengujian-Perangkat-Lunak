@@ -9,6 +9,7 @@ class Product_model extends CI_Model
     public $price;
     public $image = "default.jpg";
     public $description;
+    public $expired_date;
 
     public function rules()
     {
@@ -20,10 +21,11 @@ class Product_model extends CI_Model
             ['field' => 'price',
             'label' => 'Price',
             'rules' => 'numeric'],
-            
+
             ['field' => 'description',
             'label' => 'Description',
             'rules' => 'required']
+
         ];
     }
 
@@ -31,7 +33,7 @@ class Product_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+
     public function getById($id)
     {
         return $this->db->get_where($this->_table, ["product_id" => $id])->row();
@@ -45,7 +47,9 @@ class Product_model extends CI_Model
 		$this->price = $post["price"];
 		$this->image = $this->_uploadImage();
         $this->description = $post["description"];
+        $this->expired_date = $post["expired_date"];
         $this->db->insert($this->_table, $this);
+
     }
 
     public function update()
@@ -54,8 +58,8 @@ class Product_model extends CI_Model
         $this->product_id = $post["id"];
         $this->name = $post["name"];
 		$this->price = $post["price"];
-		
-		
+
+
 		if (!empty($_FILES["image"]["name"])) {
             $this->image = $this->_uploadImage();
         } else {
@@ -63,6 +67,7 @@ class Product_model extends CI_Model
 		}
 
         $this->description = $post["description"];
+        $this->expired_date = $post["expired_date"];
         $this->db->update($this->_table, $this, array('product_id' => $post['id']));
     }
 
@@ -71,7 +76,7 @@ class Product_model extends CI_Model
 		$this->_deleteImage($id);
         return $this->db->delete($this->_table, array("product_id" => $id));
 	}
-	
+
 	private function _uploadImage()
 	{
 		$config['upload_path']          = './upload/product/';
@@ -87,7 +92,7 @@ class Product_model extends CI_Model
 		if ($this->upload->do_upload('image')) {
 			return $this->upload->data("file_name");
 		}
-		
+
 		return "default.jpg";
 	}
 

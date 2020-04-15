@@ -73,78 +73,78 @@ class Testing extends CI_Controller
         return $tmp;
     }
 
-    public function ifelse2($teman){
-        $tmp = '';
-        if($teman == "andi"){
-            $tmp = "dia adalah teman saya";
-        }else{
-            $tmp = "dia bukan teman saya";
-        }
-        return $tmp;
-    }
+//     public function ifelse2($teman){
+//         $tmp = '';
+//         if($teman == "andi"){
+//             $tmp = "dia adalah teman saya";
+//         }else{
+//             $tmp = "dia bukan teman saya";
+//         }
+//         return $tmp;
+//     }    
 
-    public function ifelse3($namachief = null, $namarm = null, $namamhs){
-        $tmp = '';
-        if($namachief != NULL){
-            $tmp = $namachief;
-        }
-        else if ($namarm != NULL){
-            $tmp = $namarm;
-        }
-        else if ($namamhs != NULL){
-            $tmp = $namamhs;
-         }
-        else{
-            $tmp = "Something wrong. Please contact US";
-        }
-        return $tmp;
-    }
+//     public function ifelse3($namachief = null, $namarm = null, $namamhs){
+//         $tmp = '';
+//         if($namachief != NULL){
+//             $tmp = $namachief;
+//         }
+//         else if ($namarm != NULL){
+//             $tmp = $namarm;
+//         }
+//         else if ($namamhs != NULL){
+//             $tmp = $namamhs;
+//          }
+//         else{
+//             $tmp = "Something wrong. Please contact US";
+//         }
+//         return $tmp;
+//     }
 
-    public function ifelse4($inputtgl = 'D'){
-        $tmp = '';
-        $d = date($inputtgl);
-        if($d == "Fri"){
-            $tmp = "Have a nice weekend!";
-        }elseif($d == "Sun"){
-            $tmp = "Have a nice weekend!";
-        }elseif($d == "Mon"){
-            $tmp = "Have a nice Monday!";
-        }elseif($d == "Tue"){
-            $tmp = "Have a nice Tuesday!";
-        }elseif($d == "Wed"){
-            $tmp = "Have a nice Wednesday!";
-        }elseif($d == "Thu"){
-            $tmp = "Have a nice Thursday!";
-        }elseif($d == "Sat"){
-            $tmp = "Have a nice Weekend!";
-        }
-        return $tmp;
-    }
+//     public function ifelse4($inputtgl = 'D'){
+//         $tmp = '';
+//         $d = date($inputtgl);
+//         if($d == "Fri"){
+//             $tmp = "Have a nice weekend!";
+//         }elseif($d == "Sun"){
+//             $tmp = "Have a nice weekend!";
+//         }elseif($d == "Mon"){
+//             $tmp = "Have a nice Monday!";
+//         }elseif($d == "Tue"){
+//             $tmp = "Have a nice Tuesday!";
+//         }elseif($d == "Wed"){
+//             $tmp = "Have a nice Wednesday!";
+//         }elseif($d == "Thu"){
+//             $tmp = "Have a nice Thursday!";
+//         }elseif($d == "Sat"){
+//             $tmp = "Have a nice Weekend!";
+//         }
+//         return $tmp;
+//     }
 
-    public function loop1($var){
-        for ($i=0; $i <= 10; $i++) { 
-            $var+=$var;
-        }
-        return $var;
-    }
+//     public function loop1($var){
+//         for ($i=0; $i <= 10; $i++) { 
+//             $var+=$var;
+//         }
+//         return $var;
+//     }
 
-    public function loop2($arr){
-        $result = '';
-        foreach ($arr as $key => $value) {
-            if($key % 2 == 1){
-                $value+=$value;
-            }
-            $result = $value;
-        }
-        return $result;
-    }
+//     public function loop2($arr){
+//         $result = '';
+//         foreach ($arr as $key => $value) {
+//             if($key % 2 == 1){
+//                 $value+=$value;
+//             }
+//             $result = $value;
+//         }
+//         return $result;
+//     }
 
-    public function loop3($var){
-        $a=0;
-        while ($a <= 10) {
-            $var += $var;
-            $a++;
-        }
-        return $var;
-    }
-}
+//     public function loop3($var){
+//         $a=0;
+//         while ($a <= 10) {
+//             $var += $var;
+//             $a++;
+//         }
+//         return $var;
+//     }
+// }
